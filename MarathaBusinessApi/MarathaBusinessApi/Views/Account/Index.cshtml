@@ -1,0 +1,55 @@
+﻿@model MarathaBusinessApi.Models.tblSkyAdmin
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
+}
+
+<link href="~/Content/AccountCss/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+<script src="~/Content/AccountCss/bootstrap.min.js"></script>
+<script src="~/Content/AccountCss/jquery.min.js"></script>
+<link href="~/Content/Styles.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+<div class="register">
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="~/Content/Images/logo_white.png" alt="" />
+            <h3>Welcome</h3>
+            <p>You are 30 seconds away from earning your own money!</p>
+            <input type="submit" name="" value="Login" /><br />
+        </div>
+        <div class="col-md-9 register-right">
+            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/Home/Index">Home</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+
+                <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <h3 class="register-heading">Welcome To Maratha Business</h3>
+                    <div class="row register-form">
+                        <div class="col-md-12">
+                            <div class="col-md-6 offset-4 login-border">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="UserId" id="UserId" placeholder="User Name *" value="" autofocus />
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" name="Password" id="Password" placeholder="Password *" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" class="btnRegister" value="Login" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}

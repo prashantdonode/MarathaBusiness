@@ -1,0 +1,140 @@
+﻿@model IEnumerable<MarathaBusinessApi.Models.tblBusinessManRegistration>
+
+@{
+    ViewBag.Title = "CustomerSearch";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CustomerSearch</h2>
+
+@using (Html.BeginForm("CustomerSearch", "Home", FormMethod.Get))
+{
+    //the following are search options
+
+    @*<b> Search Option: </b>@Html.RadioButton("option", "Name") <text>Name</text> @Html.RadioButton("option", "City") <text> City </text>
+        @Html.RadioButton("option", "Subjects")<text>Subject</text> @Html.TextBox("search") <input type = "submit" name = "submit" value = "Search" />*@
+    <div class="container psd-margin-top">
+        <div class="row">
+            <div class="col-md-3">
+                <b> Select Occupations:</b>
+                <select name="Occupation" id="Occupation" class="form-control">
+                </select>
+            </div>
+            <div class="col-md-4 psd-margin-topp">
+                <input type="submit" name="submit" value="Search" class="btn btn-success" />
+            </div>
+
+        </div>
+
+    </div>
+}
+
+
+
+<div class="container psd-margin-top">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MobileNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PhoneNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Occupation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StoreName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.City)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Document)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+               
+            </tr>
+            @if (Model.Count() == 0)
+            {
+                <tr> <td colspan="10"> Please Select Occupation On List And Click the Buttons.</td></tr>
+            }
+            else
+            {
+
+                foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MobileNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhoneNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Occupation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StoreName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Document)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                   </tr>
+                }
+            }
+
+        </table>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-3.0.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $.ajax({
+            type: "POST",
+            url: "/Home/GetOccupation",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (departmentlist1) {
+                var htmldept = "";
+                console.log(departmentlist1);
+                for (i = 0; i < departmentlist1.departmentlist.length; i++) {
+                    htmldept += "<option value='" + departmentlist1.departmentlist[i].Occupation + "'>" + departmentlist1.departmentlist[i].Occupation + "</option>";
+                }
+
+                $("#Occupation").html(htmldept);
+            }
+        });
+});
+
+</script>
