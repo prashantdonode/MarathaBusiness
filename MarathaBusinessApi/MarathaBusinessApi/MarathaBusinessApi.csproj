@@ -348,13 +348,12 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\_LayoutAccount.cshtml" />
     <Content Include="Views\Home\BusinessManRegistration.cshtml" />
-    <Content Include="Views\Home\OccupationList.cshtml" />
-    <Content Include="Views\Home\AddOccupation.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Dashboard\AdminIndex.cshtml" />
     <Content Include="Views\Home\CustomerSearch.cshtml" />
     <Content Include="Views\Home\Edit.cshtml" />
     <Content Include="Views\Home\OccupationAllList.cshtml" />
+    <Content Include="Views\Home\AddOccupation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -160,3 +160,4 @@ D:\GitHubProject\MarathaBusinessApi\MarathaBusinessApi\MarathaBusinessApi\obj\De
 D:\GitHubProject\MarathaBusinessApi\MarathaBusinessApi\MarathaBusinessApi\obj\Debug\MarathaBusinessApi.csproj.GenerateResource.Cache
 D:\GitHubProject\MarathaBusinessApi\MarathaBusinessApi\MarathaBusinessApi\obj\Debug\MarathaBusinessApi.dll
 D:\GitHubProject\MarathaBusinessApi\MarathaBusinessApi\MarathaBusinessApi\obj\Debug\MarathaBusinessApi.pdb
+D:\GitHubProject\MarathaBusinessApi\MarathaBusinessApi\MarathaBusinessApi\obj\Debug\MarathaBusinessApi.csprojResolveAssemblyReference.cache

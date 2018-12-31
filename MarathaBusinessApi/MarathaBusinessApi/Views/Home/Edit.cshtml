@@ -12,6 +12,14 @@
 
     <div class="row">
 
+        <div class="col-md-3 offset-3" hidden>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Oid, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.Oid, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Oid, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
         <div class="col-md-3 offset-3">
             <div class="form-group">
                 @Html.LabelFor(model => model.Occupation, htmlAttributes: new { @class = "control-label col-md-2" })
