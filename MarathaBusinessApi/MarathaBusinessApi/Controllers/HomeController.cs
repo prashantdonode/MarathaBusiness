@@ -78,6 +78,46 @@ namespace MarathaBusinessApi.Controllers
         #endregion
 
 
+        #region Edit Occupations List Of Items
+
+        public ActionResult Edit(int id)
+        {
+            var result = _db.tblOccupations.Find(id);
+            return View(result);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(tblOccupation model)
+        {
+            tblOccupation _objocc = _db.tblOccupations.Where(psd=>psd.Oid==model.Oid).FirstOrDefault();
+
+            _objocc.Occupation = model.Occupation;
+
+            _db.Entry(_objocc).State = System.Data.Entity.EntityState.Modified;
+            _db.SaveChanges();
+            
+
+            return RedirectToAction("AddOccupation", "Home");
+        }
+
+        #endregion
+
+
+        #region Delete Occupations List of Items
+
+        public ActionResult Delete(int id)
+        {
+            var result = _db.tblOccupations.Find(id);
+
+            _db.Entry(result).State = System.Data.Entity.EntityState.Deleted;
+            _db.SaveChanges();
+
+            return RedirectToAction("AddOccupation", "Home");
+        }
+
+        #endregion
+
+
         #region Search Information By Customer Or End User
 
         public ActionResult CustomerSearch(string Occupation)
