@@ -161,3 +161,5 @@ D:\GitHubProject\MarathaBusinessApi\MarathaBusinessApi\MarathaBusinessApi\obj\De
 D:\GitHubProject\MarathaBusinessApi\MarathaBusinessApi\MarathaBusinessApi\obj\Debug\MarathaBusinessApi.dll
 D:\GitHubProject\MarathaBusinessApi\MarathaBusinessApi\MarathaBusinessApi\obj\Debug\MarathaBusinessApi.pdb
 D:\GitHubProject\MarathaBusinessApi\MarathaBusinessApi\MarathaBusinessApi\obj\Debug\MarathaBusinessApi.csprojResolveAssemblyReference.cache
+D:\GitHubProject\MarathaBusinessApi\MarathaBusinessApi\MarathaBusinessApi\obj\Debug\MarathaBusinessApi.Migrations.fourthdata.resources
+D:\GitHubProject\MarathaBusinessApi\MarathaBusinessApi\MarathaBusinessApi\obj\Debug\MarathaBusinessApi.Migrations.fifthdata.resources
