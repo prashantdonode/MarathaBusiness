@@ -1,11 +1,9 @@
 ﻿@model IEnumerable<MarathaBusinessApi.Models.tblBusinessManRegistration>
 
 @{
-    ViewBag.Title = "DisplayAllBusinessMan";
+    ViewBag.Title = "DisplayBusinessManRegistrationsList";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-
-<h2>Display All Business Man</h2>
 
 
 <div class="table-responsive">
@@ -15,25 +13,31 @@
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MobileNo)
+                @Html.DisplayNameFor(model => model.NameofBusiness)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PhoneNo)
+                @Html.DisplayNameFor(model => model.TypeofBusiness)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Occupation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StoreName)
+                @Html.DisplayNameFor(model => model.Contact)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Address)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.City)
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Website)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AboutBusiness)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Services)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BestPrice)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Document)
@@ -50,25 +54,31 @@
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.MobileNo)
+                    @Html.DisplayFor(modelItem => item.NameofBusiness)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.PhoneNo)
+                    @Html.DisplayFor(modelItem => item.TypeofBusiness)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Occupation)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StoreName)
+                    @Html.DisplayFor(modelItem => item.Contact)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Address)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.City)
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Website)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AboutBusiness)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Services)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BestPrice)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Document)

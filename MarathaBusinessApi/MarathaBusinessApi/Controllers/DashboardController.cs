@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MarathaBusinessApi.Entity;
+using MarathaBusinessApi.Models;
 
 namespace MarathaBusinessApi.Controllers
 {
@@ -18,7 +19,7 @@ namespace MarathaBusinessApi.Controllers
 
         #region Diplay All Business Man Registration List
 
-        public ActionResult DisplayAllBusinessMan()
+        public ActionResult DisplayBusinessManRegistrationsList()
         {
             var result = _db.tblBusinessManRegistrations.ToList();
 
@@ -27,10 +28,33 @@ namespace MarathaBusinessApi.Controllers
 
         #endregion
 
-        #region Delete Business Man Registrations
+        #region Delete And Edit Business Man Registrations
 
-        public ActionResult DeleteBusinessMan()
+        public ActionResult Edit(int id)
         {
+            var result = _db.tblBusinessManRegistrations.Find(id);
+            return View(result);
+        }
+
+
+        public ActionResult Edit(tblBusinessManRegistration model)
+        {
+            tblBusinessManRegistration _objBusiness = new tblBusinessManRegistration();
+           
+
+
+            return Redirect("DisplayAllBusinessMan");
+        }
+
+
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            var result = _db.tblBusinessManRegistrations.Find(id);
+
+            _db.Entry(result).State = System.Data.Entity.EntityState.Deleted;
+            _db.SaveChanges();
+
             return View();
         }
 
