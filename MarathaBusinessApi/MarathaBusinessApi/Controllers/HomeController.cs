@@ -83,7 +83,7 @@ namespace MarathaBusinessApi.Controllers
         public ActionResult CustomerSearch(string Occupation)
         {
             tblBusinessManRegistration model = new tblBusinessManRegistration();
-            model.Occupation = Occupation;
+            model.TypeofBusiness = Occupation;
             model.Status = 1;
             var result = _objReg.CustomerSearchOccupation(model);
 
