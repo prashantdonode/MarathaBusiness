@@ -29,14 +29,16 @@ namespace MarathaBusinessApi.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Bid { get; set; }
         public string Name { get; set; }
-        public string MobileNo { get; set; }
-        public string PhoneNo { get; set; }
-        public string Email { get; set; }
-        public string Occupation { get; set; }
-        public string StoreName { get; set; }
+        public string NameofBusiness { get; set; }
+        public string TypeofBusiness { get; set; }
+        public string Contact { get; set; }
         public string Address { get; set; }
-        public string City { get; set; }
-        public byte Document { get; set; }
+        public string Email { get; set; }        
+        public string Website { get; set; }        
+        public string AboutBusiness { get; set; }
+        public string Services { get; set; }
+        public string BestPrice { get; set; }
+        public byte[] Document { get; set; }
         public int Status { get; set; }
     }
 
