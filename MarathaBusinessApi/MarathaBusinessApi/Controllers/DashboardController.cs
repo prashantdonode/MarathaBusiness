@@ -36,14 +36,27 @@ namespace MarathaBusinessApi.Controllers
             return View(result);
         }
 
-
+        [HttpPost]
         public ActionResult Edit(tblBusinessManRegistration model)
         {
-            tblBusinessManRegistration _objBusiness = new tblBusinessManRegistration();
-           
+            tblBusinessManRegistration _objBusiness = (from psd in _db.tblBusinessManRegistrations where (psd.Bid == model.Bid) select psd).FirstOrDefault();
 
+            _objBusiness.AboutBusiness = model.AboutBusiness;
+            _objBusiness.Address = model.Address;
+            _objBusiness.BestPrice = model.BestPrice;
+            _objBusiness.Contact = model.Contact;
+            _objBusiness.Email = model.Email;
+            _objBusiness.Name = model.Name;
+            _objBusiness.NameofBusiness = model.NameofBusiness;
+            _objBusiness.Services = model.Services;
+            _objBusiness.Status = model.Status;
+            _objBusiness.TypeofBusiness = model.TypeofBusiness;
+            _objBusiness.Website = model.Website;
 
-            return Redirect("DisplayAllBusinessMan");
+            _db.Entry(_objBusiness).State = System.Data.Entity.EntityState.Modified;
+            _db.SaveChanges();
+
+            return Redirect("DisplayBusinessManRegistrationsList");
         }
 
 
@@ -55,7 +68,7 @@ namespace MarathaBusinessApi.Controllers
             _db.Entry(result).State = System.Data.Entity.EntityState.Deleted;
             _db.SaveChanges();
 
-            return View();
+            return Redirect("DisplayBusinessManRegistrationsList");
         }
 
         #endregion
