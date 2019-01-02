@@ -25,15 +25,17 @@ namespace MarathaBusinessApi.Controllers
                 tblBusinessManRegistration _objBusiness = new tblBusinessManRegistration();
 
                 _objBusiness.Name = model.Name;
-                _objBusiness.MobileNo = model.MobileNo;
-                _objBusiness.Address = model.Address;
-                _objBusiness.City = model.City;
+                _objBusiness.NameofBusiness = model.NameofBusiness;
+                _objBusiness.TypeofBusiness = model.TypeofBusiness;
+                _objBusiness.Contact = model.Contact;
+                _objBusiness.Address = model.Address;               
                 _objBusiness.Email = model.Email;
-                _objBusiness.PhoneNo = model.PhoneNo;
-                _objBusiness.Occupation = model.Occupation;
-                _objBusiness.StoreName = model.StoreName;
+                _objBusiness.Website = model.Website;
+                _objBusiness.AboutBusiness = model.AboutBusiness;
+                _objBusiness.Services = model.Services;
+                _objBusiness.BestPrice = model.BestPrice;
                 _objBusiness.Document = model.Document;
-                _objBusiness.Status = 1;
+                _objBusiness.Status = model.Status;
 
                 _db.tblBusinessManRegistrations.Add(_objBusiness);
                 _db.SaveChanges();
@@ -119,7 +121,7 @@ namespace MarathaBusinessApi.Controllers
         {
             try
             {
-                var result = _db.tblBusinessManRegistrations.Where(psd => psd.Occupation == model.Occupation && psd.Status==model.Status).ToList();
+                var result = _db.tblBusinessManRegistrations.Where(psd => psd.TypeofBusiness == model.TypeofBusiness && psd.Status==model.Status).ToList();
 
                 return new ProjectResult { Message="Success",Status=1,Response=result};
 
@@ -130,5 +132,47 @@ namespace MarathaBusinessApi.Controllers
         }
 
         #endregion
+
+        #region Get All Business Man Information For Customer Search Id wise
+
+        [HttpPost]
+        public async Task<ProjectResult> CustomerSearchIdWise(tblBusinessManRegistration model)
+        {
+            try
+            {
+                var result = _db.tblBusinessManRegistrations.Where(psd => psd.Bid == model.Bid).ToList();
+
+                return new ProjectResult { Message = "Success", Status = 1, Response = result };
+
+            }
+            catch (Exception exp)
+            {
+                return new ProjectResult { Message = exp.ToString(), Status = 0, Response = null };
+            }
+        }
+
+        #endregion
+
+        #region Get All Business Man Information
+
+        [HttpGet]
+        public async Task<ProjectResult> CustomerSearch(tblBusinessManRegistration model)
+        {
+            try
+            {
+                var result = _db.tblBusinessManRegistrations.ToList();
+
+                return new ProjectResult { Message = "Success", Status = 1, Response = result };
+
+            }
+            catch (Exception exp)
+            {
+                return new ProjectResult { Message = exp.ToString(), Status = 0, Response = null };
+            }
+        }
+
+        #endregion
+
+
     }
 }
