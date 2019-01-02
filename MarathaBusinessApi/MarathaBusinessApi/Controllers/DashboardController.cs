@@ -56,7 +56,7 @@ namespace MarathaBusinessApi.Controllers
             _db.Entry(_objBusiness).State = System.Data.Entity.EntityState.Modified;
             _db.SaveChanges();
 
-            return Redirect("DisplayBusinessManRegistrationsList");
+            return RedirectToAction("DisplayBusinessManRegistrationsList","Dashboard");
         }
 
 
@@ -68,7 +68,7 @@ namespace MarathaBusinessApi.Controllers
             _db.Entry(result).State = System.Data.Entity.EntityState.Deleted;
             _db.SaveChanges();
 
-            return Redirect("DisplayBusinessManRegistrationsList");
+            return RedirectToAction("DisplayBusinessManRegistrationsList", "Dashboard");
         }
 
         #endregion
