@@ -232,6 +232,14 @@
     <Compile Include="Migrations\201812191346551_thirddatanew.Designer.cs">
       <DependentUpon>201812191346551_thirddatanew.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812241306380_fourthdata.cs" />
+    <Compile Include="Migrations\201812241306380_fourthdata.Designer.cs">
+      <DependentUpon>201812241306380_fourthdata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812271214176_fifthdata.cs" />
+    <Compile Include="Migrations\201812271214176_fifthdata.Designer.cs">
+      <DependentUpon>201812271214176_fifthdata.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -379,6 +387,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812191346551_thirddatanew.resx">
       <DependentUpon>201812191346551_thirddatanew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812241306380_fourthdata.resx">
+      <DependentUpon>201812241306380_fourthdata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812271214176_fifthdata.resx">
+      <DependentUpon>201812271214176_fifthdata.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
