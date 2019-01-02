@@ -11,27 +11,27 @@
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
     <h3> Add New Occupation</h3>
-            <hr />
+    <hr />
 
-    <div class="row">
+            <div class="row">
 
-            <div class="col-md-3 offset-3">
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Occupation, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-3 offset-3">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Occupation, htmlAttributes: new { @class = "control-label col-md-2" })
                         @Html.EditorFor(model => model.Occupation, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.Occupation, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-           </div>
-        <div class="col-md-4 psd-padding-top">
-            <div class="form-group">
-                <input type="submit" value="Add Occupation" class="btn btn-success" />
+                <div class="col-md-4 psd-padding-top">
+                    <div class="form-group">
+                        <input type="submit" value="Add Occupation" class="btn btn-success" />
+                    </div>
+                </div>
             </div>
-        </div>
-       </div>
 }
 
 <div class="col-md-6 offset-2">
-    @{
-        Html.RenderAction("OccupationList", "Home");
-    }
-</div>
+        @{
+            Html.RenderAction("OccupationAllList", "Home");
+        }
+    </div>

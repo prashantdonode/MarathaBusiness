@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<MarathaBusinessApi.Models.tblOccupation>
 
+
 <div class="table-responsive">
     <table class="table table-bordered table-striped">
         <tr>
@@ -16,7 +17,6 @@
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id=item.Oid }) |
-                    @Html.ActionLink("Details", "Details", new { id=item.Oid }) |
                     @Html.ActionLink("Delete", "Delete", new { id=item.Oid })
                 </td>
             </tr>

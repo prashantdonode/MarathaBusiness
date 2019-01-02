@@ -68,7 +68,7 @@ namespace MarathaBusinessApi.Controllers
             return View();
         }
 
-        public ActionResult OccupationList()
+        public ActionResult OccupationAllList()
         {
             var result = _objReg.GetOccupationList();
 

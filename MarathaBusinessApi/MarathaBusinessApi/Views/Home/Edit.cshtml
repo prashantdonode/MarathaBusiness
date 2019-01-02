@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Edit";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 
@@ -11,6 +11,14 @@
     @Html.AntiForgeryToken()
 
     <div class="row">
+
+        <div class="col-md-3 offset-3" hidden>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Oid, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.Oid, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Oid, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
         <div class="col-md-3 offset-3">
             <div class="form-group">
@@ -21,7 +29,7 @@
         </div>
         <div class="col-md-4 psd-padding-top">
             <div class="form-group">
-                <input type="submit" value="Add Occupation" class="btn btn-success" />
+                <input type="submit" value="Update" class="btn btn-success" />
             </div>
         </div>
     </div>
