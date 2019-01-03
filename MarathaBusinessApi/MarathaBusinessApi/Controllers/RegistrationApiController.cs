@@ -174,5 +174,54 @@ namespace MarathaBusinessApi.Controllers
         #endregion
 
 
+        #region Approval
+
+        [HttpPost]
+        public async Task<ProjectResult> ApprovalCustomer(tblBusinessManRegistration model)
+        {
+            try
+            {
+                tblBusinessManRegistration _objreg = _db.tblBusinessManRegistrations.Where(psd => psd.Bid == model.Bid).FirstOrDefault();
+                _objreg.Status = model.Status;
+
+                _db.Entry(_objreg).State = System.Data.Entity.EntityState.Modified;
+                _db.SaveChanges();
+
+                return new ProjectResult { Message = "Success", Status = 1, Response = _objreg };
+
+            }
+            catch (Exception exp)
+            {
+                return new ProjectResult { Message = exp.ToString(), Status = 0, Response = null };
+            }
+        }
+
+        #endregion
+
+        #region Reject
+
+        [HttpPost]
+        public async Task<ProjectResult> ApprovalReject(tblBusinessManRegistration model)
+        {
+            try
+            {
+                tblBusinessManRegistration _objreg = _db.tblBusinessManRegistrations.Where(psd => psd.Bid == model.Bid).FirstOrDefault();
+                _objreg.Status = model.Status;
+
+                _db.Entry(_objreg).State = System.Data.Entity.EntityState.Modified;
+                _db.SaveChanges();
+
+                return new ProjectResult { Message = "Success", Status = 1, Response = _objreg };
+
+            }
+            catch (Exception exp)
+            {
+                return new ProjectResult { Message = exp.ToString(), Status = 0, Response = null };
+            }
+        }
+
+        #endregion
+
+
     }
 }
