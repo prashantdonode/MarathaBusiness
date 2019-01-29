@@ -16,7 +16,8 @@ namespace MarathaBusinessApi.Entity
         public DbSet<tblBusinessManRegistration> tblBusinessManRegistrations { get; set; }
         public DbSet<tblOccupation> tblOccupations { get; set; }
         public DbSet<tblSkyAdmin> tblSkyAdmins { get; set; }
-
+        public DbSet<tblProductImage> tblProductImages { get; set; }
+        public object Files { get; internal set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

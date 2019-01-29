@@ -7,6 +7,7 @@ using System.Web.Http;
 using System.Threading.Tasks;
 using MarathaBusinessApi.Entity;
 using MarathaBusinessApi.Models;
+using System.Text;
 
 namespace MarathaBusinessApi.Controllers
 {
@@ -28,7 +29,7 @@ namespace MarathaBusinessApi.Controllers
                 _objBusiness.NameofBusiness = model.NameofBusiness;
                 _objBusiness.TypeofBusiness = model.TypeofBusiness;
                 _objBusiness.Contact = model.Contact;
-                _objBusiness.Address = model.Address;               
+                _objBusiness.Address = model.Address;
                 _objBusiness.Email = model.Email;
                 _objBusiness.Website = model.Website;
                 _objBusiness.AboutBusiness = model.AboutBusiness;
@@ -43,9 +44,10 @@ namespace MarathaBusinessApi.Controllers
 
                 return new ProjectResult { Message = "Success", Status = 1, Response = "Success" };
 
-            }catch(Exception exp)
+            }
+            catch (Exception exp)
             {
-                return new ProjectResult { Message=exp.ToString(),Status=0,Response=null};
+                return new ProjectResult { Message = exp.ToString(), Status = 0, Response = null };
             }
         }
 
@@ -64,11 +66,12 @@ namespace MarathaBusinessApi.Controllers
                 _db.tblOccupations.Add(_objOcucc);
                 _db.SaveChanges();
 
-                return new ProjectResult { Message="Success",Status=1,Response="Success"};
+                return new ProjectResult { Message = "Success", Status = 1, Response = "Success" };
 
-            }catch(Exception exp)
+            }
+            catch (Exception exp)
             {
-                return new ProjectResult { Message=exp.ToString(),Status=0,Response=null};
+                return new ProjectResult { Message = exp.ToString(), Status = 0, Response = null };
             }
         }
 
@@ -83,11 +86,12 @@ namespace MarathaBusinessApi.Controllers
             {
                 var result = _db.tblOccupations.ToList();
 
-                return new ProjectResult { Message="Success",Status=1,Response=result};
+                return new ProjectResult { Message = "Success", Status = 1, Response = result };
 
-            }catch(Exception exp)
+            }
+            catch (Exception exp)
             {
-                return new ProjectResult { Message=exp.ToString(),Status=0,Response=null};
+                return new ProjectResult { Message = exp.ToString(), Status = 0, Response = null };
             }
         }
 
@@ -96,17 +100,18 @@ namespace MarathaBusinessApi.Controllers
         #region Admin Login Methods
 
         [HttpPost]
-        public async Task<ProjectResult>AdminLogin(tblSkyAdmin model)
+        public async Task<ProjectResult> AdminLogin(tblSkyAdmin model)
         {
             try
             {
-                var result = _db.tblSkyAdmins.Where(psd=>psd.UserId==model.UserId && psd.Password==model.Password).ToList();
+                var result = _db.tblSkyAdmins.Where(psd => psd.UserId == model.UserId && psd.Password == model.Password).ToList();
 
-                return new ProjectResult { Message="Success",Status=1,Response=result};
+                return new ProjectResult { Message = "Success", Status = 1, Response = result };
 
-            }catch(Exception exp)
+            }
+            catch (Exception exp)
             {
-                return new ProjectResult { Message=exp.ToString(),Status=0,Response=null};
+                return new ProjectResult { Message = exp.ToString(), Status = 0, Response = null };
             }
 
         }
@@ -117,17 +122,18 @@ namespace MarathaBusinessApi.Controllers
         #region Get All Business Man Information For Customer Search
 
         [HttpPost]
-        public async Task<ProjectResult>CustomerSearchOccupation(tblBusinessManRegistration model)
+        public async Task<ProjectResult> CustomerSearchOccupation(tblBusinessManRegistration model)
         {
             try
             {
-                var result = _db.tblBusinessManRegistrations.Where(psd => psd.TypeofBusiness == model.TypeofBusiness && psd.Status==model.Status).ToList();
+                var result = _db.tblBusinessManRegistrations.Where(psd => psd.TypeofBusiness == model.TypeofBusiness && psd.Status == model.Status).ToList();
 
-                return new ProjectResult { Message="Success",Status=1,Response=result};
+                return new ProjectResult { Message = "Success", Status = 1, Response = result };
 
-            }catch(Exception exp)
+            }
+            catch (Exception exp)
             {
-                return new ProjectResult { Message=exp.ToString(),Status=0,Response=null};
+                return new ProjectResult { Message = exp.ToString(), Status = 0, Response = null };
             }
         }
 
@@ -221,6 +227,84 @@ namespace MarathaBusinessApi.Controllers
         }
 
         #endregion
+
+        #region Add New Business Mans Registrations
+
+        [HttpPost]
+        public async Task<ProjectResult> InsertImage(tblProductImage model)
+        {
+            try
+            {
+                tblProductImage _objBusiness = new tblProductImage();
+
+                _objBusiness.Name = model.Name;
+                _objBusiness.Product1 = model.Product1;
+               
+                _db.tblProductImages.Add(_objBusiness);
+                _db.SaveChanges();
+
+
+                return new ProjectResult { Message = "Success", Status = 1, Response = "Success" };
+
+            }
+            catch (Exception exp)
+            {
+                return new ProjectResult { Message = exp.ToString(), Status = 0, Response = null };
+            }
+        }
+
+        #endregion
+
+        #region Get Product Images
+
+        [HttpPost]
+        public async Task<ProjectResult> ProductImageIdWise(tblProductImage model)
+        {
+            try
+            {
+                var result = _db.tblProductImages.Where(psd => psd.Name == model.Name).ToList();
+
+                return new ProjectResult { Message = "Success", Status = 1, Response = result };
+
+            }
+            catch (Exception exp)
+            {
+                return new ProjectResult { Message = exp.ToString(), Status = 0, Response = null };
+            }
+        }
+
+        #endregion
+
+        #region Add New Document Registrations
+
+        [HttpPost]
+        public async Task<ProjectResult> ProductImage(tblProductImage model)
+        {
+            try
+            {
+                tblProductImage _objBusiness = new tblProductImage();
+
+                _objBusiness.Name = model.Name;
+                _objBusiness.Product1 = model.Product1;
+                _objBusiness.Product2 = model.Product2;
+                _objBusiness.Product3 = model.Product3;
+                _objBusiness.Product4 = model.Product4;
+               
+                _db.tblProductImages.Add(_objBusiness);
+                _db.SaveChanges();
+
+
+                return new ProjectResult { Message = "Success", Status = 1, Response = "Success" };
+
+            }
+            catch (Exception exp)
+            {
+                return new ProjectResult { Message = exp.ToString(), Status = 0, Response = null };
+            }
+        }
+
+        #endregion
+
 
 
     }

@@ -42,6 +42,19 @@ namespace MarathaBusinessApi.Models
         public int Status { get; set; }
     }
 
+    public class tblProductImage
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Bid { get; set; }
+        public string Name { get; set; }       
+        public string Product1 { get; set; }
+        public string Product2 { get; set; }
+        public string Product3 { get; set; }
+        public string Product4 { get; set; }
+    }
+
+
 
     public class tblOccupation
     {
